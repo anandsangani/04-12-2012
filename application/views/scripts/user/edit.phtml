@@ -1,0 +1,20 @@
+<? include "header.phtml"; ?>
+  <h1><?=$this->escape($this->title);?></h1>
+  <div id="description">
+    <?=$this->escape($this->description);?>
+  </div>
+  <form name="edit" method="post" action="<?=$this->escape($this->action)?>">
+  <input type="hidden" name="id" value="<?=$this->data['id']?>">
+  <table>
+   	<tr>
+	  <td><?=$this->escape($this->label_uname)?></td>
+	  <td><input type="text" name="username" value="<?=$this->data['username']?>"></td>
+	</tr>
+    <tr>
+	  <td><?=$this->escape($this->label_email)?></td>
+	  <td><input type="text" name="user_email" value="<?=$this->data['email']?>"></td>
+	</tr>	
+  </table>
+  <input type="submit" name="submit" value="<?=$this->escape($this->label_submit);?>">
+  </form>
+<? include "footer.phtml"; ?>

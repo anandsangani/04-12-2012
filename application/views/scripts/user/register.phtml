@@ -1,0 +1,44 @@
+<script type="text/javascript" src="../validation.js"></script>
+<? include "header.phtml"; ?>
+  <h1><?=$this->escape($this->title);?></h1>
+  <div id="description">
+    <?=$this->escape($this->description);?>
+  </div>
+  <font size="+3"> New Users:</font>
+  <form name="register" method="post" action="<?=$this->escape($this->action)?>" onsubmit="return validateRegisterForm()">
+  <table>
+    <tr>
+	  <td><?=$this->escape($this->label_uname)?></td>
+	  <td><input type="text" name="user_name"></td>
+	</tr>
+    <tr>
+    	<td> <?=$this->escape($this->label_email)?></td>
+        <td><input type="text" name="user_email"></td>
+    </tr>	
+    <tr>
+	  <td><?=$this->escape($this->label_pass)?></td>
+	  <td><input type="password" name="password"></td>
+	</tr>
+    <tr>
+    	<td> <?=$this->escape($this->label_find_us)?></td>
+        <td><input type="text" name="user_find_us"></td>
+    </tr>	
+  </table>
+  <input type="submit" name="submit" value="<?=$this->escape($this->label_submit);?>" onsubmit="return validateLoginForm()">
+  </form>
+  <!-- login form--- -->
+  <h1><?=$this->escape($this->title_login);?></h1>
+  <form name='login' method='post' action='<?=$this->escape($this->action_login);?>'>
+  <table>
+    <tr>
+	  <td><?=$this->escape($this->username_login);?></td>
+	  <td><input type='text' name='username_login'></td>
+	</tr>
+    <tr>
+	  <td><?=$this->escape($this->password_login);?></td>
+	  <td><input type='password' name='password_login'></td>
+	</tr>	
+  </table>
+  <input type='submit' name='login' value='Login'>
+  </form>
+<? include "footer.phtml"; ?>
